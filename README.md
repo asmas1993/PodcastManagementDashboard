@@ -2,7 +2,7 @@
 
 <!-- Explaination for integration into a WordPress backend. -->
 
-## Description
+## Description & Explaination for integration into a WordPress backend.
 Certainly! To integrate the Podcast Management Dashboard (HTML, CSS, and JS) into a WordPress backend, we need to follow a few steps. The goal is to integrate the frontend code into WordPress and make it functional within the WordPress theme or as a plugin. Here's a README.md that demonstrates how you can integrate the above code into a WordPress setup:
 
 This guide demonstrates how to integrate a Podcast Management Dashboard (HTML, CSS, and JS) into a WordPress backend. The dashboard allows users to manage podcasts, episodes, and view listening stats. We'll integrate it into a WordPress theme or as a WordPress plugin.
@@ -143,7 +143,7 @@ Step 5: Display the Dashboard Using Shortcode
 
 <!-- Frontend HTML/CSS/JS implementation explaination -->
 
-## Description
+## Description & Explaination for HTML/CSS/JS implementation.
 This repository contains the full implementation of a Podcast Management Dashboard with Material UI, Bootstrap, and Chart.js. The dashboard allows users to manage podcasts, episodes, and view listening statistics in a visually appealing, responsive layout.
 
 ## Features
