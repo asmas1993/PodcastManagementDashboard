@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast Management Dashboard</title>
+
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Include Material UI CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.10.0/dist/material-ui.min.css">
+  <link rel="stylesheet" href="./tools/css/styles.css">
+
+  <style>
+    /* Custom Styles */
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .material-button {
+      background-color: #007bff;
+      color: white;
+      border-radius: 4px;
+      padding: 8px 16px;
+    }
+
+    .material-button:hover {
+      background-color: #0056b3;
+    }
+
+    #stats-chart {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="bg-primary text-white p-3 text-center">
+    <h1>Podcast Management Dashboard</h1>
+  </header>
+
+  <main class="container mt-4">
+    <!-- Podcast Section -->
+    <section id="podcast-section" class="podcast_section_class">
+        <h2>All Podcasts</h2>
+        <div id="podcast-list" class="row">
+            <!-- Dynamically filled with JS -->
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <button id="add-podcast-btn" class="material-button mt-3">Add Podcast</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Podcast Form (Initially Hidden) -->
+    <section id="add-podcast-section" class="podcast_section_class" style="display: none;">
+        <h2>Add New Podcast</h2>
+        <form id="add-podcast-form" class="form-group">
+            <label for="podcast-title">Title:</label>
+            <input type="text" id="podcast-title" class="form-control" required />
+
+            <label for="podcast-created" class="mt-2">Creation Date:</label>
+            <input type="date" id="podcast-created" class="form-control" required />
+
+            <label for="podcast-listens" class="mt-2">Total Listens:</label>
+            <input type="number" id="podcast-listens" class="form-control" required />
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary mt-3">Add Podcast</button>
+                    <button type="button" id="cancel-add-podcast" class="btn btn-danger mt-3">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- Episode Management Section -->
+    <section id="episode-section" style="display: none;" class="podcast_section_class">
+        <h2>Episodes for <span id="selected-podcast-title"></span></h2>
+        <div id="episode-list" class="row">
+            <!-- Dynamically filled with JS -->
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <button id="add-episode-btn" class="btn btn-primary mt-3">Add Episode</button>
+                <button id="back-to-podcasts" class="btn btn-secondary mt-3">Back to Podcasts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Episode Form (Initially Hidden) -->
+    <section id="add-episode-section" style="display: none;" class="podcast_section_class">
+        <h2>Add New Episode</h2>
+        <form id="add-episode-form" class="form-group">
+            <label for="episode-title">Title:</label>
+            <input type="text" id="episode-title" class="form-control" required />
+
+            <label for="episode-description" class="mt-2">Description:</label>
+            <textarea id="episode-description" class="form-control" required></textarea>
+
+            <label for="episode-date" class="mt-2">Publish Date:</label>
+            <input type="date" id="episode-date" class="form-control" required />
+
+            <label for="episode-audio" class="mt-2">Upload Audio:</label>
+            <input type="file" id="episode-audio" class="form-control" accept="audio/*" />
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary mt-3">Add Episode</button>
+                    <button type="button" id="cancel-add-episode" class="btn btn-danger mt-3">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- Listening Stats Section -->
+    <section id="stats-section">
+      <h2>Listening Stats</h2>
+      <canvas id="stats-chart"></canvas>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Podcast Management Dashboard</p>
+  </footer>
+
+  <!-- Include Bootstrap JS and Material UI JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mui/material@5.10.0/dist/material-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./tools/js/scripts.js"></script>
+</body>
+
+</html>
